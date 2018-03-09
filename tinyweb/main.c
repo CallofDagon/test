@@ -13,7 +13,6 @@ int main(int argc, char **argv){
     char hostname[MAXLINE], port[MAXLINE];
     socklen_t clientlen;
     struct sockaddr_storage clientaddr;
-
     //命令行设置监听套接字
     if(argc != 2){
         fprintf(stderr, "usage: %s <port>\n", argv[0]);
@@ -100,7 +99,7 @@ void read_requesthdrs(rio_t *rp){
         printf("%s", buf);
     }
     return;
-}
+}//
 
 int parse_uri(char *uri, char *filename, char *cgiargs){
     char *ptr;
