@@ -87,6 +87,8 @@ void clienterror(int fd, char *cause, char *errnum, char *shortmsg, char *longms
     Rio_writen(fd, buf, strlen(buf));
     sprintf(buf, "Content_length: %d\r\n\r\n", (int)strlen(body));
     Rio_writen(fd, buf, strlen(buf));
+    sprintf(buf, "\r\n");
+    Rio_writen(fd, buf, strlen(buf));
     Rio_writen(fd, body, strlen(body));
 }
 
